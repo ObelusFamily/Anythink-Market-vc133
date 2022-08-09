@@ -44,6 +44,7 @@ class Item extends React.Component {
     const canModify =
       this.props.currentUser &&
       this.props.currentUser.username === this.props.item.seller.username;
+
     return (
       <div className="container page">
         <div className="text-dark">
