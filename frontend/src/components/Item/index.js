@@ -19,7 +19,6 @@ const mapDispatchToProps = (dispatch) => ({
   onUnload: () => dispatch({ type: ITEM_PAGE_UNLOADED }),
 });
 
-
 class Item extends React.Component {
   componentWillMount() {
     this.props.onLoad(
@@ -45,18 +44,18 @@ class Item extends React.Component {
     const canModify =
       this.props.currentUser &&
       this.props.currentUser.username === this.props.item.seller.username;
-		
-		if (!this.props.item.image) {
-			this.props.item.image = "../placeholder.png";
-		}
-		
+
+    if (!this.props.item.image) {
+      this.props.item.image = "../placeholder.png";
+    }
+
     return (
       <div className="container page">
         <div className="text-dark">
           <div className="row bg-white p-4">
             <div className="col-6">
               <img
-								src={this.props.item.image}
+                src={this.props.item.image}
                 alt={this.props.item.title}
                 className="item-img"
                 style={{ height: "500px", width: "100%", borderRadius: "6px" }}
