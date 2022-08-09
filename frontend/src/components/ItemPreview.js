@@ -29,6 +29,10 @@ const ItemPreview = (props) => {
     }
   };
 
+	if (!item.image) {
+		item.image = "placeholder.png";
+	}
+
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -36,7 +40,6 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-				onError={(e)=>{e.target.onerror = null; e.target.src="placeholder.png"}}
 				src={item.image}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
